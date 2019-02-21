@@ -8,14 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
-const config = {
-  apiKey: "AIzaSyD06ZMAY6eHwuI73RjBvCZ8Jedec7tyYzQ",
-  authDomain: "astronushub-1a488.firebaseapp.com",
-  databaseURL: "https://astronushub-1a488.firebaseio.com",
-  projectId: "astronushub-1a488",
-  storageBucket: "astronushub-1a488.appspot.com",
-  messagingSenderId: "307436214172",
-};
+import { environment } from '../environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +19,7 @@ const config = {
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(config),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule
   ],
